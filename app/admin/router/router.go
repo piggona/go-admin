@@ -1,10 +1,11 @@
 package router
 
 import (
-	"github.com/gin-gonic/gin"
-	_ "github.com/gin-gonic/gin"
 	"go-admin/pkg/jwtauth"
 	jwt "go-admin/pkg/jwtauth"
+
+	"github.com/gin-gonic/gin"
+	_ "github.com/gin-gonic/gin"
 )
 
 var (
@@ -53,5 +54,6 @@ func examplesCheckRoleRouter(r *gin.Engine, authMiddleware *jwtauth.GinJWTMiddle
 	// {{认证路由自动补充在此处请勿删除}}
 	registerSysContentRouter(v1, authMiddleware)
 	registerSysCategoryRouter(v1, authMiddleware)
+	registerAppRouter(v1, authMiddleware)
 
 }

@@ -1,7 +1,6 @@
 package router
 
 import (
-	"github.com/gin-gonic/gin"
 	"go-admin/app/admin/middleware"
 	"go-admin/app/admin/middleware/handler"
 	"go-admin/common/global"
@@ -10,6 +9,8 @@ import (
 	"go-admin/tools"
 	"go-admin/tools/config"
 	"os"
+
+	"github.com/gin-gonic/gin"
 )
 
 func InitRouter() {
@@ -41,6 +42,11 @@ func InitRouter() {
 
 	// 注册业务路由
 	// TODO: 这里可存放业务路由，里边并无实际路由只有演示代码
+	// app := r.Group("/api/proxy")
+	// app.GET("/articleList", apis.GetArticleList)
+	// for _, f := range routerCheckRole {
+	// 	f(app, authMiddleware)
+	// }
 	InitExamplesRouter(r, authMiddleware)
 
 	//return r
